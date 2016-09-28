@@ -1,11 +1,11 @@
 var Promesa = function(payload) {
  var then = null;
- var beh =  {
-     then: (f)=> {then = f; return beh;},
+ var result =  {
+     then: (f)=> {then = f; return result;},
      success: ()=> then(payload),
      f: then,
  };
-return beh;
+return result;
 };
 Promesa.resolve = (payload) => new Promessa(payload)
 
